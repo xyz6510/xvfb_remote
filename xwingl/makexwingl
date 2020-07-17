@@ -1,0 +1,17 @@
+#!/bin/sh
+
+GCC=gcc
+
+FILES="xwingl.c"
+LIBS="-lm -lpthread -lX11 -lXcursor -lXfixes -lGL -lGLX -lavutil -lavcodec"
+OUT="xwingl"
+
+WARN="-Werror -Wall -Wfatal-errors -Wno-unused-result -Wno-unused-value -Wno-stringop-truncation -Wno-stringop-overflow"
+
+OPTIM="-march=native -O3"
+
+echo "$GCC $WARN $OPTIM -s -o $OUT $FILES $LIBS"
+
+$GCC $WARN $OPTIM -s -o $OUT $FILES $LIBS &&
+
+echo

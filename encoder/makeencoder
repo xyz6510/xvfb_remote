@@ -1,0 +1,18 @@
+#!/bin/sh
+
+
+GCC="gcc"
+
+WARN="-Werror -Wall -Wfatal-errors -Wno-unused-result -Wno-unused-value -Wno-stringop-truncation -Wno-stringop-overflow"
+
+OPTIM="-march=native -O3"
+
+FILES="encoder.c"
+LIBS="-lpthread -lm -lX11 -lXtst -lXdamage -lXfixes -lyuv -lx264"
+OUT="encoder"
+
+echo "$GCC $WARN $OPTIM -s -o $OUT $FILES $LIBS"
+
+$GCC $WARN $OPTIM -s -o $OUT $FILES $LIBS &&
+
+echo
