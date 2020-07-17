@@ -1,7 +1,7 @@
 # xvfb_remote
 remotely view xvfb screen
 --------------------------
-
+<pre>
 Xvfb remote
 -----------
 access remotely Xvfb screen
@@ -105,3 +105,4 @@ options for xwingl
 		-term n :terminal show on start 1 show 0 hide
 		-img_idx n :default img index on start\n
 example: xwingl -ip 127.0.0.1 -p 33500 -res 1024x576 -res 800x600 -map us -map us:dvorak -img 1.0,0.0,0.0,0.0 -img 1.0,0.2,-0.07,-0.12 -zoom 0,200,400,300 -cscale 1 -font 8 -term 1 -img_idx 1
+</pre>
