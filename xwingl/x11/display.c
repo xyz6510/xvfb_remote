@@ -42,6 +42,7 @@ void open_display(char *name,int resizable,int borderless)
 		sizehints->flags|=PMinSize|PMaxSize;
 		XSetWMNormalHints(d,w,sizehints);
 		XFree(sizehints);
+		Xsync(d,False);
 	}
 	if (borderless) {
 		struct MwmHints {
