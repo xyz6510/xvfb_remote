@@ -58,8 +58,9 @@ void cursor(SRV *srv)
 			cr=XcursorImageLoadCursor(disp,img);
 			XcursorImageDestroy(img);
 			if (xwg->terminal_inside==0) XDefineCursor(disp,win,cr);
-    		xwg->win_cursor=cr;
-    		XSync(disp,False);
+			if (xwg->win_cursor) XFreeCursor(disp,xwg->win_cursor);
+	    		xwg->win_cursor=cr;
+    			XSync(disp,False);
 		}
 	}
 	XCloseDisplay(disp);
